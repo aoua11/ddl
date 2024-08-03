@@ -1,0 +1,12 @@
+CREATE TABLE PRODUCT (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR2(50) NOT NULL,
+    SupplierID INT,
+    CategoryID INT,
+    Unit VARCHAR2(20),
+    Price DECIMAL(10, 2),
+    FOREIGN KEY (SupplierID) REFERENCES SUPPLIER(SupplierID),
+    FOREIGN KEY (CategoryID) REFERENCES CATEGORY(CategoryID)
+);
+ALTER TABLE PRODUCT
+ADD Category VARCHAR2(20);
